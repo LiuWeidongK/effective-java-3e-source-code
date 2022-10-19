@@ -1,4 +1,5 @@
 package effectivejava.chapter5.item29.technqiue1;
+
 import effectivejava.chapter5.item29.EmptyStackException;
 
 import java.util.Arrays;
@@ -23,8 +24,9 @@ public class Stack<E> {
     }
 
     public E pop() {
-        if (size == 0)
+        if (size == 0) {
             throw new EmptyStackException();
+        }
         E result = elements[--size];
         elements[size] = null; // Eliminate obsolete reference
         return result;
@@ -35,16 +37,19 @@ public class Stack<E> {
     }
 
     private void ensureCapacity() {
-        if (elements.length == size)
+        if (elements.length == size) {
             elements = Arrays.copyOf(elements, 2 * size + 1);
+        }
     }
 
     // Little program to exercise our generic Stack
     public static void main(String[] args) {
         Stack<String> stack = new Stack<>();
-        for (String arg : args)
+        for (String arg : args) {
             stack.push(arg);
-        while (!stack.isEmpty())
+        }
+        while (!stack.isEmpty()) {
             System.out.println(stack.pop().toUpperCase());
+        }
     }
 }

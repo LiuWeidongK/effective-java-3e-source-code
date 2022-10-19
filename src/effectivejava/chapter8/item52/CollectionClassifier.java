@@ -1,4 +1,5 @@
 package effectivejava.chapter8.item52;
+
 import java.util.*;
 import java.math.*;
 
@@ -23,7 +24,8 @@ public class CollectionClassifier {
                 new HashMap<String, String>().values()
         };
 
-        for (Collection<?> c : collections)
+        for (Collection<?> c : collections) {
             System.out.println(classify(c));
+        }
     }
 }

@@ -6,8 +6,9 @@ import java.util.Comparator;
 public class Sum {
     private static long sum() {
         Long sum = 0L;
-        for (long i = 0; i <= Integer.MAX_VALUE; i++)
+        for (long i = 0; i <= Integer.MAX_VALUE; i++) {
             sum += i;
+        }
         return sum;
     }
 
@@ -23,7 +24,8 @@ public class Sum {
         }
 
         // Prevents VM from optimizing away everything.
-        if (x == 42)
+        if (x == 42) {
             System.out.println();
+        }
     }
 }

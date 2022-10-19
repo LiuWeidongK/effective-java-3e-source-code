@@ -6,8 +6,8 @@ import java.util.*;
 // Repaired  static classifier method. (Page 240)
 public class FixedCollectionClassifier {
     public static String classify(Collection<?> c) {
-        return c instanceof Set  ? "Set" :
-                c instanceof List ? "List" : "Unknown Collection";
+        return c instanceof Set ? "Set" :
+               c instanceof List ? "List" : "Unknown Collection";
     }
 
     public static void main(String[] args) {
@@ -17,7 +17,8 @@ public class FixedCollectionClassifier {
                 new HashMap<String, String>().values()
         };
 
-        for (Collection<?> c : collections)
+        for (Collection<?> c : collections) {
             System.out.println(classify(c));
+        }
     }
 }

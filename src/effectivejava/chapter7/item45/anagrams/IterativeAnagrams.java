@@ -19,9 +19,11 @@ public class IterativeAnagrams {
             }
         }
 
-        for (Set<String> group : groups.values())
-            if (group.size() >= minGroupSize)
+        for (Set<String> group : groups.values()) {
+            if (group.size() >= minGroupSize) {
                 System.out.println(group.size() + ": " + group);
+            }
+        }
     }
 
     private static String alphabetize(String s) {

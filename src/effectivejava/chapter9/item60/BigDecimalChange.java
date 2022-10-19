@@ -9,8 +9,8 @@ public class BigDecimalChange {
         int itemsBought = 0;
         BigDecimal funds = new BigDecimal("1.00");
         for (BigDecimal price = TEN_CENTS;
-             funds.compareTo(price) >= 0;
-             price = price.add(TEN_CENTS)) {
+                funds.compareTo(price) >= 0;
+                price = price.add(TEN_CENTS)) {
             funds = funds.subtract(price);
             itemsBought++;
         }

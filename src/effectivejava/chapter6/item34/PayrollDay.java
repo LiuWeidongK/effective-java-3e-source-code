@@ -4,13 +4,19 @@ import static effectivejava.chapter6.item34.PayrollDay.PayType.*;
 
 // The strategy enum pattern (Page 166)
 enum PayrollDay {
-    MONDAY(WEEKDAY), TUESDAY(WEEKDAY), WEDNESDAY(WEEKDAY),
-    THURSDAY(WEEKDAY), FRIDAY(WEEKDAY),
-    SATURDAY(WEEKEND), SUNDAY(WEEKEND);
+    MONDAY(WEEKDAY),
+    TUESDAY(WEEKDAY),
+    WEDNESDAY(WEEKDAY),
+    THURSDAY(WEEKDAY),
+    FRIDAY(WEEKDAY),
+    SATURDAY(WEEKEND),
+    SUNDAY(WEEKEND);
 
     private final PayType payType;
 
-    PayrollDay(PayType payType) { this.payType = payType; }
+    PayrollDay(PayType payType) {
+        this.payType = payType;
+    }
 
     int pay(int minutesWorked, int payRate) {
         return payType.pay(minutesWorked, payRate);
@@ -21,7 +27,7 @@ enum PayrollDay {
         WEEKDAY {
             int overtimePay(int minsWorked, int payRate) {
                 return minsWorked <= MINS_PER_SHIFT ? 0 :
-                        (minsWorked - MINS_PER_SHIFT) * payRate / 2;
+                       (minsWorked - MINS_PER_SHIFT) * payRate / 2;
             }
         },
         WEEKEND {
@@ -31,6 +37,7 @@ enum PayrollDay {
         };
 
         abstract int overtimePay(int mins, int payRate);
+
         private static final int MINS_PER_SHIFT = 8 * 60;
 
         int pay(int minsWorked, int payRate) {
@@ -40,7 +47,8 @@ enum PayrollDay {
     }
 
     public static void main(String[] args) {
-        for (PayrollDay day : values())
+        for (PayrollDay day : values()) {
             System.out.printf("%-10s%d%n", day, day.pay(8 * 60, 1));
+        }
     }
 }

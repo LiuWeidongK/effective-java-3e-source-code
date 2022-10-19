@@ -1,4 +1,5 @@
 package effectivejava.chapter5.item33;
+
 import java.util.*;
 
 // Typesafe heterogeneous container pattern (Pages 151-4)
@@ -13,10 +14,10 @@ public class Favorites {
         return type.cast(favorites.get(type));
     }
 
-//    // Achieving runtime type safety with a dynamic cast
-//    public <T> void putFavorite(Class<T> type, T instance) {
-//        favorites.put(Objects.requireNonNull(type), type.cast(instance));
-//    }
+    //    // Achieving runtime type safety with a dynamic cast
+    //    public <T> void putFavorite(Class<T> type, T instance) {
+    //        favorites.put(Objects.requireNonNull(type), type.cast(instance));
+    //    }
 
     public static void main(String[] args) {
         Favorites f = new Favorites();

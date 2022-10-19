@@ -8,6 +8,7 @@ import java.lang.annotation.ElementType;
 // Documentation comment examples (Pages 255-9)
 public class DocExamples<E> {
     // Method comment (Page 255)
+
     /**
      * Returns the element at the specified position in this list.
      *
@@ -15,29 +16,30 @@ public class DocExamples<E> {
      * time. In some implementations it may run in time proportional
      * to the element position.
      *
-     * @param  index index of element to return; must be
-     *         non-negative and less than the size of this list
+     * @param index index of element to return; must be
+     * non-negative and less than the size of this list
      * @return the element at the specified position in this list
      * @throws IndexOutOfBoundsException if the index is out of range
-     *         ({@code index < 0 || index >= this.size()})
+     * ({@code index < 0 || index >= this.size()})
      */
     E get(int index) {
         return null;
     }
 
     // Use of @implSpec to describe self-use patterns & other visible implementation details. (Page 256)
+
     /**
      * Returns true if this collection is empty.
      *
-     * @implSpec This implementation returns {@code this.size() == 0}.
-     *
      * @return true if this collection is empty
+     * @implSpec This implementation returns {@code this.size() == 0}.
      */
     public boolean isEmpty() {
         return false;
     }
 
     // Use of the @literal tag to include HTML and javadoc metacharacters in javadoc comments. (Page 256)
+
     /**
      * A geometric series converges if {@literal |r| < 1}.
      */
@@ -45,15 +47,22 @@ public class DocExamples<E> {
     }
 
     // Controlling summary description when there is a period in the first "sentence" of doc comment. (Page 257)
+
     /**
      * A suspect, such as Colonel Mustard or {@literal Mrs. Peacock}.
      */
     public enum FixedSuspect {
-        MISS_SCARLETT, PROFESSOR_PLUM, MRS_PEACOCK, MR_GREEN, COLONEL_MUSTARD, MRS_WHITE
+        MISS_SCARLETT,
+        PROFESSOR_PLUM,
+        MRS_PEACOCK,
+        MR_GREEN,
+        COLONEL_MUSTARD,
+        MRS_WHITE
     }
 
 
     // Generating a javadoc index entry in Java 9 and later releases. (Page 258)
+
     /**
      * This method complies with the {@index IEEE 754} standard.
      */
@@ -61,24 +70,34 @@ public class DocExamples<E> {
     }
 
     // Documenting enum constants (Page 258)
+
     /**
      * An instrument section of a symphony orchestra.
      */
     public enum OrchestraSection {
-        /** Woodwinds, such as flute, clarinet, and oboe. */
+        /**
+         * Woodwinds, such as flute, clarinet, and oboe.
+         */
         WOODWIND,
 
-        /** Brass instruments, such as french horn and trumpet. */
+        /**
+         * Brass instruments, such as french horn and trumpet.
+         */
         BRASS,
 
-        /** Percussion instruments, such as timpani and cymbals. */
+        /**
+         * Percussion instruments, such as timpani and cymbals.
+         */
         PERCUSSION,
 
-        /** Stringed instruments, such as violin and cello. */
+        /**
+         * Stringed instruments, such as violin and cello.
+         */
         STRING;
     }
 
     // Documenting an annotation type (Page 259)
+
     /**
      * Indicates that the annotated method is a test method that
      * must throw the designated exception to pass.

@@ -1,4 +1,5 @@
 package effectivejava.chapter6.item39.annotationwitharrayparameter;
+
 import effectivejava.chapter6.item39.markerannotation.Test;
 
 import java.lang.reflect.*;
@@ -40,8 +41,9 @@ public class RunTests {
                             break;
                         }
                     }
-                    if (passed == oldPassed)
+                    if (passed == oldPassed) {
                         System.out.printf("Test %s failed: %s %n", m, exc);
+                    }
                 }
             }
         }

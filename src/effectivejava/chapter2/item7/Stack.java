@@ -1,4 +1,5 @@
 package effectivejava.chapter2.item7;
+
 import java.util.*;
 
 // Can you spot the "memory leak"?  (Pages 26-27)
@@ -17,8 +18,9 @@ public class Stack {
     }
 
     public Object pop() {
-        if (size == 0)
+        if (size == 0) {
             throw new EmptyStackException();
+        }
         return elements[--size];
     }
 
@@ -27,25 +29,28 @@ public class Stack {
      * doubling the capacity each time the array needs to grow.
      */
     private void ensureCapacity() {
-        if (elements.length == size)
+        if (elements.length == size) {
             elements = Arrays.copyOf(elements, 2 * size + 1);
+        }
     }
 
-//    // Corrected version of pop method (Page 27)
-//    public Object pop() {
-//        if (size == 0)
-//            throw new EmptyStackException();
-//        Object result = elements[--size];
-//        elements[size] = null; // Eliminate obsolete reference
-//        return result;
-//    }
+    //    // Corrected version of pop method (Page 27)
+    //    public Object pop() {
+    //        if (size == 0)
+    //            throw new EmptyStackException();
+    //        Object result = elements[--size];
+    //        elements[size] = null; // Eliminate obsolete reference
+    //        return result;
+    //    }
 
     public static void main(String[] args) {
         Stack stack = new Stack();
-        for (String arg : args)
+        for (String arg : args) {
             stack.push(arg);
+        }
 
-        while (true)
+        while (true) {
             System.err.println(stack.pop());
+        }
     }
 }

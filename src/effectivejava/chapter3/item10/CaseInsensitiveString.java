@@ -13,12 +13,16 @@ public final class CaseInsensitiveString {
     }
 
     // Broken - violates symmetry!
-    @Override public boolean equals(Object o) {
-        if (o instanceof CaseInsensitiveString)
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof CaseInsensitiveString) {
             return s.equalsIgnoreCase(
                     ((CaseInsensitiveString) o).s);
+        }
         if (o instanceof String)  // One-way interoperability!
+        {
             return s.equalsIgnoreCase((String) o);
+        }
         return false;
     }
 
@@ -33,9 +37,9 @@ public final class CaseInsensitiveString {
         System.out.println(list.contains(s));
     }
 
-//    // Fixed equals method (Page 40)
-//    @Override public boolean equals(Object o) {
-//        return o instanceof CaseInsensitiveString &&
-//                ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
-//    }
+    //    // Fixed equals method (Page 40)
+    //    @Override public boolean equals(Object o) {
+    //        return o instanceof CaseInsensitiveString &&
+    //                ((CaseInsensitiveString) o).s.equalsIgnoreCase(s);
+    //    }
 }

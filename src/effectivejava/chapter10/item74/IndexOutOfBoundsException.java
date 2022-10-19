@@ -10,10 +10,10 @@ public class IndexOutOfBoundsException extends RuntimeException {
      *
      * @param lowerBound the lowest legal index value
      * @param upperBound the highest legal index value plus one
-     * @param index      the actual index value
+     * @param index the actual index value
      */
     public IndexOutOfBoundsException(int lowerBound, int upperBound,
-                                     int index) {
+            int index) {
         // Generate a detail message that captures the failure
         super(String.format(
                 "Lower bound: %d, Upper bound: %d, Index: %d",

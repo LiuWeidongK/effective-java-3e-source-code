@@ -1,4 +1,5 @@
 package effectivejava.chapter11.item78.fixedstopthread2;
+
 import java.util.concurrent.*;
 
 // Cooperative thread termination with a volatile field
@@ -9,8 +10,9 @@ public class StopThread {
             throws InterruptedException {
         Thread backgroundThread = new Thread(() -> {
             int i = 0;
-            while (!stopRequested)
+            while (!stopRequested) {
                 i++;
+            }
         });
         backgroundThread.start();
 

@@ -14,13 +14,13 @@ public class Freq {
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File(args[0]);
 
-//        // Uses the streams API but not the paradigm--Don't do this!
-//        Map<String, Long> freq = new HashMap<>();
-//        try (Stream<String> words = new Scanner(file).tokens()) {
-//            words.forEach(word -> {
-//                freq.merge(word.toLowerCase(), 1L, Long::sum);
-//            });
-//        }
+        //        // Uses the streams API but not the paradigm--Don't do this!
+        //        Map<String, Long> freq = new HashMap<>();
+        //        try (Stream<String> words = new Scanner(file).tokens()) {
+        //            words.forEach(word -> {
+        //                freq.merge(word.toLowerCase(), 1L, Long::sum);
+        //            });
+        //        }
 
         // Proper use of streams to initialize a frequency table (
         Map<String, Long> freq;

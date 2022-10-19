@@ -1,4 +1,5 @@
 package effectivejava.chapter2.item6;
+
 import java.util.regex.Pattern;
 
 // Reusing expensive object for improved performance (Pages 22 and 23)
@@ -33,8 +34,9 @@ public class RomanNumerals {
         }
 
         // Prevents VM from optimizing away everything.
-        if (!b)
+        if (!b) {
             System.out.println();
+        }
     }
 }
 

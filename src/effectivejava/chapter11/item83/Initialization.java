@@ -8,9 +8,11 @@ public class Initialization {
 
     // Lazy initialization of instance field4 - synchronized accessor - Page 333
     private FieldType field2;
+
     private synchronized FieldType getField2() {
-        if (field2 == null)
+        if (field2 == null) {
             field2 = computeFieldValue();
+        }
         return field2;
     }
 
@@ -19,7 +21,9 @@ public class Initialization {
         static final FieldType field = computeFieldValue();
     }
 
-    private static FieldType getField() { return FieldHolder.field; }
+    private static FieldType getField() {
+        return FieldHolder.field;
+    }
 
 
     // Double-check idiom for lazy initialization of instance fields - Page 334
@@ -29,15 +33,18 @@ public class Initialization {
     private FieldType getField4() {
         FieldType result = field4;
         if (result != null)    // First check (no locking)
+        {
             return result;
+        }
 
-        synchronized(this) {
+        synchronized (this) {
             if (field4 == null) // Second check (with locking)
+            {
                 field4 = computeFieldValue();
+            }
             return field4;
         }
     }
-
 
 
     // Single-check idiom - can cause repeated initialization! - Page 334
@@ -45,8 +52,9 @@ public class Initialization {
 
     private FieldType getField5() {
         FieldType result = field5;
-        if (result == null)
+        if (result == null) {
             field5 = result = computeFieldValue();
+        }
         return result;
     }
 

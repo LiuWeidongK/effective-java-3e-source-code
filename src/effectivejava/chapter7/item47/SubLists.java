@@ -22,15 +22,15 @@ public class SubLists {
                 .mapToObj(start -> list.subList(start, list.size()));
     }
 
-//    // Returns a stream of all the sublists of its input list, excluding the empty list
-//    // This version is derived from the obvious iterative code (Page 220)
-//    public static <E> Stream<List<E>> of(List<E> list) {
-//        return IntStream.range(0, list.size())
-//                .mapToObj(start ->
-//                        IntStream.rangeClosed(start + 1, list.size())
-//                                .mapToObj(end -> list.subList(start, end)))
-//                .flatMap(x -> x);
-//    }
+    //    // Returns a stream of all the sublists of its input list, excluding the empty list
+    //    // This version is derived from the obvious iterative code (Page 220)
+    //    public static <E> Stream<List<E>> of(List<E> list) {
+    //        return IntStream.range(0, list.size())
+    //                .mapToObj(start ->
+    //                        IntStream.rangeClosed(start + 1, list.size())
+    //                                .mapToObj(end -> list.subList(start, end)))
+    //                .flatMap(x -> x);
+    //    }
 
     public static void main(String[] args) {
         List<String> list = Arrays.asList(args);

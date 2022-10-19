@@ -1,4 +1,5 @@
 package effectivejava.chapter11.item78.brokenstopthread;
+
 import java.util.concurrent.*;
 
 // Broken! - How long would you expect this program to run?  (Page 312)
@@ -9,8 +10,9 @@ public class StopThread {
             throws InterruptedException {
         Thread backgroundThread = new Thread(() -> {
             int i = 0;
-            while (!stopRequested)
+            while (!stopRequested) {
                 i++;
+            }
         });
         backgroundThread.start();
 

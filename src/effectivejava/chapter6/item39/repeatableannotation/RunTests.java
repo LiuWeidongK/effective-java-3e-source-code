@@ -43,12 +43,13 @@ public class RunTests {
                             break;
                         }
                     }
-                    if (passed == oldPassed)
+                    if (passed == oldPassed) {
                         System.out.printf("Test %s failed: %s %n", m, exc);
+                    }
                 }
             }
         }
         System.out.printf("Passed: %d, Failed: %d%n",
-                          passed, tests - passed);
+                passed, tests - passed);
     }
 }
